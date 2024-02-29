@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="corps">
+        <% genres.forEach(function(genre) { %>
+        <div class="affichage">
+            <h1><%= genre.gnom %></h1>
+        </div>
+        <% }); %>
+    </div>
+</body>
+</html>

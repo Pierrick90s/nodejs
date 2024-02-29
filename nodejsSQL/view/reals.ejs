@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="corps">
+
+        <% reals.forEach(function(real) { %>
+            <div class="affichage">
+                <h1><%= real.rprenom %> <%= real.rnom %></h1>
+                <img src="<%= real.rphoto %>">
+            </div>
+        <% }); %>
+
+    </div>
+</body>
+</html>

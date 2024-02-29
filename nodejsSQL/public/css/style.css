@@ -1,0 +1,187 @@
+a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: large;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5%;
+}
+
+nav form{
+    padding: 0.2em;
+    width: 8%;
+    height: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+nav button{
+    border: 0px;
+    background-color: white;
+    font-size: larger;
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+
+}
+span {
+    font-size: 0.5em;
+}
+.corps {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 15%;
+}
+
+.hide{
+    margin: 2%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 15%;
+}
+
+/* .section {
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 15%;
+} */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submit{
+    margin-top: 10%
+}
+
+.user {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: start;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+.soloprofil{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.soloprofil img{
+    display: flex;
+    max-width: auto;
+    height: 10%;
+}
+.modifier{
+    margin-top: 2%;
+}
+
+.formulaire {
+    padding: 0.2em;
+    width: 8%;
+    height: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+    /* padding: 0% 0%; */
+    /* border: 1px black solid; */
+}
+
+.affichage {
+    padding: 0.2em;
+    width: 20%;
+    height: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly; */
+}
+
+.affichage img {
+    display: flex;
+    /* max-width : 90%;
+    height : auto; */
+    height: 24vh;
+    width: 36vh;
+    /* max-width : 60%;
+    max-height : 10%; */
+    /* border: 1px black solid; */
+    margin-bottom: 5%;
+}
+
+.fonction{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.fonction button {
+        border: 0px;
+        background-color: white;
+        font-size: medium;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+}
+
+.fonction a {
+   padding: 0px;
+    margin: 0px;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="column">
+
+        <div class="soloprofil">
+            <h1><%= acteur.aprenom %> <%= acteur.anom %></h1>
+            <img src="<%= acteur.aphoto %>" width="500px">
+        </div>
+
+        <div class="fonction">
+            <button class="" id="btn"><a>Modifier</a></button>
+            <form action="../supprActeur" method="post">
+                <input type="hidden" name="id_acteurs" value="<%= acteur.id_acteurs %>">
+                <button type="submit"><a>Supprimer</a></button>
+            </form>
+            <button><a href="/acteurs">Retour</a></button>
+        </div>
+
+                <div class="hide" id="modif" hidden>
+                    
+                        <h1>Modifier l'acteur</h1>
+
+                            <div class="formulaire">
+
+                                <form action="../modifActeur" method="post">
+                                    <input type="text" name="aprenom" value="<%= acteur.aprenom %>" placeholder="" required>
+                                    <input type="text" name="anom" value="<%= acteur.anom %>" placeholder="" required>
+                                    <input type="text" name="aphoto" value="<%= acteur.aphoto %>" placeholder="">
+                                    <input type="hidden" name="id_acteurs" value="<%= acteur.id_acteurs %>">
+                                    <button class ="submit" type="submit">Valider</button>
+                                </form>
+
+                            </div>
+    
+                </div>
+
+                 <script>
+                    document.getElementById('btn').onclick = function() {affiche()+css()};
+                    document.getElementById('btn').ondblclick = function() {cache()+css2()};
+
+                    function affiche() 
+                    {document.getElementById('modif').hidden = false;}
+
+                    function cache() 
+                    {document.getElementById('modif').hidden = true;}
+
+                    function css()
+                    {document.getElementById('modif').style.display = 'flex';}
+
+                    function css2()
+                    {document.getElementById('modif').style.display = '';}
+                </script>
+
+    </div>
+</body>
+</html>

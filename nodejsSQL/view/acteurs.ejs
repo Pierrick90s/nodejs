@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <br>
+        <div class="fonction">
+            <button class="" id="btn"><a>Ajouter</a></button>
+        </div>
+        <br>
+        <div class="hide" id="modif" hidden>
+            <h1>Insérer un acteur :</h1>
+                    <form action="addActeur" method="post">
+                        <input type="text" name="anom" value="" placeholder="Nom" required>
+                        <input type="text" name="aprenom" value="" placeholder="Prenom" required>
+                        <input type="text" name="aphoto" value="" placeholder="Url photo">
+                        <input type="submit" value="Insérer">
+                        <button><a href="/acteurs">Retour</a></button>
+                    </form> 
+        </div>
+        <script>
+            document.getElementById('btn').onclick = function() {affiche()+css()};
+            document.getElementById('btn').ondblclick = function() {cache()+css2()};
+
+            function affiche() 
+            {document.getElementById('modif').hidden = false;}
+
+            function cache() 
+            {document.getElementById('modif').hidden = true;}
+
+            function css()
+            {document.getElementById('modif').style.display = 'flex';}
+
+            function css2()
+            {document.getElementById('modif').style.display = '';}
+        </script>
+    </nav>
+    <div class="corps">
+
+        <% acteurs.forEach(function(acteur) { %>
+
+            <div class="affichage">
+                <h1><%= acteur.aprenom %> <%= acteur.anom %></h1>
+                <a href = "/acteur/<%= acteur.id_acteurs %>"><img src="<%= acteur.aphoto %>"></a>
+            </div>
+
+        <% }); %>
+
+    </div>
+</body>
+</html>
