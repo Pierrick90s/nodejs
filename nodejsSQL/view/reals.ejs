@@ -7,12 +7,47 @@
     <title>Document</title>
 </head>
 <body>
+     <nav>
+        <br>
+        <div class="fonction">
+            <button class="" id="btn"><a>Ajouter</a></button>
+            <button id=""><a href="/acteurs">Acteurs</a></button>
+            <button id=""><a href="/genres">Genre</a></button>
+        </div>
+        <br>
+        <div class="hide" id="modif" hidden>
+            <h1>Insérer un réalisateur :</h1>
+                    <form action="addReal" method="post">
+                        <input type="text" name="rprenom" value="" placeholder="Prenom" required>
+                        <input type="text" name="rnom" value="" placeholder="Nom" required>
+                        <input type="text" name="rphoto" value="" placeholder="Url photo">
+                        <input type="submit" value="Insérer">
+                        <button><a href="/reals">Retour</a></button>
+                    </form> 
+        </div>
+        <script>
+            document.getElementById('btn').onclick = function() {affiche()+css()};
+            document.getElementById('btn').ondblclick = function() {cache()+css2()};
+
+            function affiche() 
+            {document.getElementById('modif').hidden = false;}
+
+            function cache() 
+            {document.getElementById('modif').hidden = true;}
+
+            function css()
+            {document.getElementById('modif').style.display = 'flex';}
+
+            function css2()
+            {document.getElementById('modif').style.display = '';}
+        </script>
+    </nav>
     <div class="corps">
 
         <% reals.forEach(function(real) { %>
             <div class="affichage">
                 <h1><%= real.rprenom %> <%= real.rnom %></h1>
-                <img src="<%= real.rphoto %>">
+                <a href = "/real/<%= real.id_reals %>"><img src="<%= real.rphoto %>"></a>
             </div>
         <% }); %>
 

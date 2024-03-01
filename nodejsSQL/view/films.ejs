@@ -11,12 +11,13 @@
         <br>
         <div class="fonction">
             <button class="" id="btn"><a>Ajouter</a></button>
+            <button id=""><a href="/acteurs">Acteurs</a></button>
             <button id=""><a href="/reals">Réalisateurs</a></button>
             <button id=""><a href="/genres">Genre</a></button>
         </div>
         <br>
         <div class="hide" id="modif" hidden>
-            <h1>Insérer un acteur :</h1>
+            <h1>Insérer un film :</h1>
                     <form action="addActeur" method="post">
                         <input type="text" name="anom" value="" placeholder="Nom" required>
                         <input type="text" name="aprenom" value="" placeholder="Prenom" required>
@@ -44,11 +45,12 @@
     </nav>
     <div class="corps">
 
-        <% acteurs.forEach(function(acteur) { %>
+        <% films.forEach(function(f) { %>
 
             <div class="affichage">
-                <h1><%= acteur.aprenom %> <%= acteur.anom %></h1>
-                <a href = "/acteur/<%= acteur.id_acteurs %>"><img src="<%= acteur.aphoto %>"></a>
+                <h1><%= f.titre %></h1>
+                <h2>><%= f.date_de_sortie %></h2>
+                <a href = "/film/<%= f.id_film %>"><img src="<%= new Intl.DateTimeFormat('gb-GB', { day: '2-digit', month: '2-digit',year: 'numeric'}).format(new Date(f.affiche))%>"></a>
             </div>
 
         <% }); %>

@@ -7,7 +7,9 @@
     <title>Real</title>
 </head>
 <body>
-    <div class="corps">
+
+    <div class="column">
+
         <div class ="affichage">
         <h1> 
             <%= real.rnom %>
@@ -15,6 +17,50 @@
         </h1>
         <img src="<%= real.rphoto %>">
         </div>
+        <div class="fonction">
+            <button class="" id="btn"><a>Modifier</a></button>
+            <form action="../supprReal" method="post">
+                <input type="hidden" name="id_reals" value="<%= real.id_reals %>">
+                <button type="submit"><a>Supprimer</a></button>
+            </form>
+            <button><a href="/reals">Retour</a></button>
+        </div>
+
+                <div class="hide" id="modif" hidden>
+                    
+                        <h1>Modifier le real</h1>
+
+                            <div class="formulaire">
+
+                                <form action="../modifReal" method="post">
+                                    <input type="text" name="rprenom" value="<%= real.rprenom %>" placeholder="" required>
+                                    <input type="text" name="rnom" value="<%= real.rnom %>" placeholder="" required>
+                                    <input type="text" name="rphoto" value="<%= real.rphoto %>" placeholder="">
+                                    <input type="hidden" name="id_reals" value="<%= real.id_reals %>">
+                                    <button class ="submit" type="submit">Valider</button>
+                                </form>
+
+                            </div>
+    
+                </div>
+
+                 <script>
+                    document.getElementById('btn').onclick = function() {affiche()+css()};
+                    document.getElementById('btn').ondblclick = function() {cache()+css2()};
+
+                    function affiche() 
+                    {document.getElementById('modif').hidden = false;}
+
+                    function cache() 
+                    {document.getElementById('modif').hidden = true;}
+
+                    function css()
+                    {document.getElementById('modif').style.display = 'flex';}
+
+                    function css2()
+                    {document.getElementById('modif').style.display = '';}
+                </script>
     </div>
+
 </body>
 </html>

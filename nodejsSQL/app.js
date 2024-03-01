@@ -17,6 +17,17 @@ app.set("views", __dirname + "/view");
 
 app.set('view engine','ejs')
 
+// app.get("/film/:id", (req, res) => {
+//   bdd.getFilm(req.params.id, function (row) {
+//     res.render("film", { film: row });
+//   }); //
+// });
+
+app.get("/films", (req, res) => {
+  bdd.getAllFilms(function (rows) {
+    res.render("films", { films: rows });
+  }); //
+});
 
 app.get("/acteur/:id", (req, res) => {
   // console.log(post);
@@ -29,10 +40,6 @@ app.get("/acteurs", (req, res) => {
   bdd.getAllActeurs(function (rows) {
     res.render("acteurs", { acteurs: rows });
   }); //
-});
-
-app.get("/formActeur", (req, res) => {
-  res.render("formActeur");
 });
 
 app.post("/addActeur", (req, res) => {
@@ -63,6 +70,18 @@ app.get("/reals", (req, res) => {
   bdd.getAllReals(function (rows) {
     res.render("reals", { reals: rows });
   }); //
+});
+
+app.post("/addReal", (req, res) => {
+  console.log(req.body);
+  bdd.addReal(req.body);
+  res.redirect("/reals");
+});
+
+app.post("/supprReal", (req, res) => {
+  // console.log(res);
+  bdd.supprReal(req.body);
+  res.redirect("/reals");
 });
 
 app.get("/genre/:id", (req, res) => {

@@ -1,5 +1,20 @@
 const connect = require('./mysqlconfig.js')
 
+exports.getFilm = function (id_film, cb) {
+  connect.query(
+    "SELECT * FROM acteurs where id_acteurs =" + idacteur,
+    function (err, result) {
+      cb(...result); // cb est un fonction de callback encoyé en paramètre à partir de app.js
+    }
+  );
+};
+
+exports.getAllFilms = function (cb) {
+  connect.query("SELECT * FROM film", function (err, result) {
+    cb(result); // cb est un fonction de callback encoyé en paramètre à partir de app.js
+  });
+};
+
 exports.getActeur = function(idacteur,cb){
     connect.query('SELECT * FROM acteurs where id_acteurs =' + idacteur,
     function(err, result) {
@@ -81,6 +96,16 @@ exports.supprActeur = function (post) {
   connect.query(
     "DELETE FROM acteurs WHERE id_acteurs = ?",
     [post.id_acteurs],
+    function (err, result) {
+      console.log(err);
+    }
+  );
+};
+
+exports.supprReal = function (post) {
+  connect.query(
+    "DELETE FROM reals WHERE id_reals = ?",
+    [post.id_reals],
     function (err, result) {
       console.log(err);
     }
